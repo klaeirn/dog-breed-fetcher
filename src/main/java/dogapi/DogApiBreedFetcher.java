@@ -48,7 +48,7 @@ public class DogApiBreedFetcher implements BreedFetcher {
             }
         }
         catch (IOException | JSONException event) {
-            throw new RuntimeException(event);
+            throw new BreedFetcher.BreedNotFoundException(breed);
         }
     }
 }
