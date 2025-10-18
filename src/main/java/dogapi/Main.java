@@ -27,7 +27,6 @@ public class Main {
         try {
             return breedFetcher.getSubBreeds(breed).size();
         } catch (BreedFetcher.BreedNotFoundException e) {
-            // Breed not found → return 0
             System.out.println(e.getMessage());
             return 0;
         }
