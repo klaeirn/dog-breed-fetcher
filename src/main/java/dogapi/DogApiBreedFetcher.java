@@ -30,7 +30,8 @@ public class DogApiBreedFetcher implements BreedFetcher {
                 .url(String.format("https://dog.ceo/api/breed/%s/list",breed))
                 .build();
 
-        try (Response response = client.newCall(request).execute()){
+        try {
+            final Response response = client.newCall(request).execute();
             final JSONObject responseBody = new JSONObject(response.body().string());
 
             if (responseBody.getString("status").equals("success")) {
